@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="../static/carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <p class="menu">Menu</p>
+            <nav>
+                <a href="/pagina_principal">Inicio</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+            <div class="usuario">
+                <a href="/perfil"><i class="user fa-solid fa-circle-user"></i></a>
+                <p>{{usuario}}</p>
+                <a href="/cerrar_sesion"><button class="btn-cerrar_sesion">Cerrar sesión</button></a>
+            </div>
+        </div>
+        <div class="contenido">
+            <div class="container-busqueda">
+                <i class="lupa fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="" id="busqueda" placeholder="Buscar">
+                <a href="/carrito"><i class="shop fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <h1 class="titulo">Carrito</h1>
+            <div class="container-opciones">
+                <div>
+                    <a class="opcion" href="/vaciar_carrito"><button>Vaciar carrito</button></a>
+                </div>
+            </div>
+            <div class="productos">
+                {% if carrito %}
+                <ul>
+                    {% for producto in carrito %}
+                    <li>
+                        <img class="vista-imagen" src="{{producto.imagen }}" alt="{{ producto.nombre }}">
+                        <p class="vista-productos">{{ producto.nombre }}</p> <span class="vista-productos"> ${{
+                            producto.precio }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="carrito-vacio">El carrito está vacío.</p>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-login">
+            <form action="/login" method="post">
+                <p>Inicio Sesion</p>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div
+                    class="mensaje-error">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+                <div class="input-box">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <input type="text" name="usuario" placeholder=" Usuario" required>
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="btn-login">Iniciar Sesion</button>
+                <div class="link-login">
+                    <p><a href="/recuperar_contraseña">¿Olvidaste la Contraseña?</a></p>
+                </div>
+                <div class="registo-link">
+                    <p>No tienes cuenta?<a href="/registro">¡Crea una aqui!</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

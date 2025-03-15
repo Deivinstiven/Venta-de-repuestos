@@ -1,0 +1,204 @@
+/* Asegurar que la página ocupe toda la pantalla */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal ocupa toda la pantalla */
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Menú lateral con altura completa */
+.sidebar {
+    background-color: #2c3e50;
+    color: white;
+    width: 25%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenido principal */
+.contenido {
+    flex-grow: 1;
+    background-color: #ecf0f1;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.menu {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    font-size: 20px;
+    margin-bottom: 170px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.user {
+    font-size: 70px;
+    margin-left: 15px;
+}
+
+.usuario {
+    padding: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-overflow: ellipsis;
+    margin-top: -100px;
+}
+
+.usuario p {
+    margin-left: 13px;
+    font-weight: bold;
+}
+
+.shop {
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+
+.container-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#busqueda {
+    border-radius: 10px;
+    border: 2px solid #555;
+    width: 100%;
+    max-width: 300px;
+    padding: 7px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.usuario i {
+    color: white;
+}
+
+.lupa {
+    font-size: 20px;
+    margin-left: auto;
+}
+
+.titulo {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Estilos de productos */
+.productos {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.productos li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.productos img {
+    width: 300px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+}
+
+.productos span {
+    font-size: 25px;
+    margin: 5px 0;
+}
+
+.productos button {
+    background-color: #27ae60;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.productos button:hover {
+    background-color: #1e8449;
+    transform: scale(1.1);
+}
+
+.btn-cerrar_sesion {
+    margin-left: 14px;
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-cerrar_sesion:hover {
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
+.btn-iniciar_sesion {
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-iniciar_sesion:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}

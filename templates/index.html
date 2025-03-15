@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <p class="menu">Menu</p>
+            <nav>
+                <a href="/pagina_principal">Inicio</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+            <div class="usuario">
+                <a href="/perfil"><i class="user fa-solid fa-circle-user"></i></a>
+                {% if usuario != "Iniciar sesión" %}
+                <p>{{ usuario }}</p>
+                <a href="/cerrar_sesion"><button class="btn-cerrar_sesion">Cerrar sesión</button></a>
+                {% else %}
+                <p><a href="/login" class="btn-iniciar_sesion">Iniciar sesión</a></p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="contenido">
+            <div class="container-busqueda">
+                <i class="lupa fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="busqueda" placeholder="Buscar">
+                {%if usuario != "Iniciar sesión"%}
+                <a href="/carrito"><i class="shop fa-solid fa-cart-shopping"></i></a>
+                {%endif%}
+            </div>
+            <h1 class="titulo">Venta de repuestos para motos</h1>
+            <ul class="productos">
+                <li>
+                    <form action="/agregarAlCarrito" method="post">
+                        <img src="../static/Moto repuestos/Repuesto1.jpg" alt="Amortiguador">
+                        <p>Amortiguador</p>
+                        <span>$100</span>
+                        <input type="hidden" name="nombre" value="Amortiguador">
+                        <input type="hidden" name="precio" value="100">
+                        <input type="hidden" name="imagen" value="../static/Moto repuestos/Repuesto1.jpg"><br>
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="/agregarAlCarrito" method="post">
+                        <img src="../static/Moto repuestos/Repuesto2.jpg" alt="Embrague">
+                        <p>Embrague</p>
+                        <span>$100</span>
+                        <input type="hidden" name="nombre" value="Embrague">
+                        <input type="hidden" name="precio" value="100">
+                        <input type="hidden" name="imagen" value="../static/Moto repuestos/Repuesto2.jpg"><br>
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="/agregarAlCarrito" method="post">
+                        <img src="../static/Moto repuestos/Repuesto3.jpg" alt="Cadena">
+                        <p>Cadena</p>
+                        <span>$100</span>
+                        <input type="hidden" name="nombre" value="Cadena">
+                        <input type="hidden" name="precio" value="100">
+                        <input type="hidden" name="imagen" value="../static/Moto repuestos/Repuesto3.jpg"><br>
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
